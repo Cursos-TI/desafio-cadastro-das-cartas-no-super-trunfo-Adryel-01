@@ -19,7 +19,7 @@ int main() {
         printf("\nVocê precisa cadastrar suas cartas para iniciar o jogo. Escolha 2 Estados para criar suas cartas. \n");
 
     // Coloquei esse campo aqui para o usuário já colocar o nome do estado, separado dos demais atributos.
-
+    
         printf("\nEstado 01: ");
         scanf(" %s", &estado);
 
