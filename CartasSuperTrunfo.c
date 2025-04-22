@@ -9,7 +9,7 @@ int main() {
     char letra;
     char codigo [10], cidade [20], estado [20];
     int populacao, pontosturisticos;
-    float area, pib;
+    float area, pib, dens_populacional, pib_per_capita;
 
 
         printf("Super Trunfo - Países \n");
@@ -21,7 +21,7 @@ int main() {
     // Coloquei esse campo aqui para o usuário já colocar o nome do estado, separado dos demais atributos.
     
         printf("\nEstado 01: ");
-        scanf(" %s", &estado);
+        scanf("%s", &estado);
 
         printf("\nAdicione os atributos a sua carta!\n");
         
@@ -46,6 +46,11 @@ int main() {
         printf("Qual o PIB da sua cidade: ");
         scanf("  %f", &pib);
 
+    // Coloquei a operação de divisão para a densidade populacional e PIB per capita.
+
+    dens_populacional = (float) (populacao / area);
+    pib_per_capita = (float) (pib / populacao);
+
     //Descrição básica para mostrar os dados de saída da carta 01
 
         printf("\nParabéns, você acabou de criar sua primeira carta! \n");
@@ -58,6 +63,8 @@ int main() {
         printf("Área: %.2f Km²\n", area);
         printf("Pontos Turísticos: %d\n", pontosturisticos);
         printf("PIB: %.2f Bilhões de Reais\n", pib);
+        printf("Densidade Populacional: %.2f hab/Km²\n", dens_populacional);
+        printf("PIB Per capita: %.2f Reais\n", pib_per_capita);
 
     /* Adicionei as variáveis que utilizaremos na carta 2, onde "letra02" é a que representará o Estado da segunda carta, 
     "codigo02" é o código da carta (Ex.: A01,B03,C04), "cidade02" o nome da cidade, "estado02" o nome do estado e assim por diante.
@@ -68,7 +75,7 @@ int main() {
         char letra02;
         char codigo02 [10], cidade02 [20], estado02 [20];
         int populacao02, pontosturisticos02;
-        float area02, pib02;
+        float area02, pib02, dens_populacional2, pib_per_capita2;
 
     // Adicionei uma pequena descrição para introduzir.
 
@@ -102,6 +109,11 @@ int main() {
         printf("Qual o PIB da sua cidade: ");
         scanf("  %f", &pib02);
 
+// Coloquei a operação de divisão para a densidade populacional e PIB per capita.
+
+    dens_populacional2 = (float) (populacao02 / area02);
+    pib_per_capita2 = (float) (pib02 / populacao02);
+
     //Descrição básica para mostrar os dados de saída da carta 02.
 
         printf("\nVocê acabou de criar sua segunda carta!\n");
@@ -114,8 +126,10 @@ int main() {
         printf("Área: %.2f Km²\n", area02);
         printf("Pontos Turísticos: %d\n", pontosturisticos02);
         printf("PIB: %.2f Bilhões de Reais\n", pib02);
+        printf("Densidade Populacional: %.2f hab/Km²\n", dens_populacional2);
+        printf("PIB per capita: %.2f Reais\n", pib_per_capita2);
 
-        printf("\nA continuar...\n");
+        printf("\nAté Logo...\n");
 
     return 0;
 }
