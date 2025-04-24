@@ -56,8 +56,8 @@ int main() {
 
     float superPoder, densPopulacionalInv;
 
-    densPopulacionalInv = (1 / dens_populacional);
-    superPoder = (populacao + area + pib + pontosturisticos + pib_per_capita + densPopulacionalInv);  
+    densPopulacionalInv = (float) (1 / dens_populacional);
+    superPoder = (float) (populacao + area + pib + pontosturisticos + pib_per_capita + densPopulacionalInv);  
 
     //Descrição básica para mostrar os dados de saída da carta 01
 
@@ -73,7 +73,7 @@ int main() {
         printf("PIB: %.2f Bilhões de Reais\n", pib);
         printf("Densidade Populacional: %.2f hab/Km²\n", dens_populacional);
         printf("PIB Per capita: %.2f Reais\n", pib_per_capita);
-        printf("Super Poder: %.2f \n", superPoder);
+        printf("Super Poder: %.3f \n", superPoder);
 
     /* Adicionei as variáveis que utilizaremos na carta 2, onde "letra02" é a que representará o Estado da segunda carta, 
     "codigo02" é o código da carta (Ex.: A01,B03,C04), "cidade02" o nome da cidade, "estado02" o nome do estado e assim por diante.
@@ -128,8 +128,8 @@ int main() {
 
     float superPoder2, densPopulacionalInv2;
 
-    densPopulacionalInv2 = (1 / dens_populacional2);
-    superPoder2 = (populacao02 + area02 + pib02 + pontosturisticos02 + pib_per_capita2 + densPopulacionalInv2); 
+    densPopulacionalInv2 = (float) (1 / dens_populacional2);
+    superPoder2 = (float) (populacao02 + area02 + pib02 + pontosturisticos02 + pib_per_capita2 + densPopulacionalInv2); 
 
     //Descrição básica para mostrar os dados de saída da carta 02.
 
@@ -152,7 +152,7 @@ int main() {
     char jogar [10];
 
         printf("\nDigite jogar e veja a carta vencedora: ");
-        scanf("%s", jogar);
+        scanf(" %s", jogar);
 
     //Comparação das cartas por atributos
 
@@ -162,11 +162,22 @@ int main() {
     resulArea = area > area02;
     resulPontosTurist = pontosturisticos > pontosturisticos02;
     resulPib = pib > pib02;
-    resulDensPopu = densPopulacionalInv < dens_populacional2;
+    resulDensPopu = densPopulacionalInv < densPopulacionalInv2;
     resulPibPerCap = pib_per_capita > pib_per_capita2;
     resulSuperPod = superPoder > superPoder2;
 
     //Fazer a saída de dados
+
+    printf("\nComparação de Cartas:\n");
+
+    printf("\nPopulação - Carta 1 Venceu: %d\n", resulPopulacao);
+    printf("Área - Carta 1 Venceu: %d\n", resulArea);
+    printf("Pontos Turísticos - Carta 1 Venceu: %d\n", resulPontosTurist);
+    printf("Pib - Carta 1 Venceu: %d\n", resulPib);
+    printf("Densidade Populacional - Carta 2 Venceu: %d\n", resulDensPopu);
+    printf("Pib Per Capita - Carta 1 Venceu: %d\n", resulPibPerCap);
+    printf("Super Poder - Carta 1 Venceu: %d\n", resulSuperPod);
+
 
     return 0;
 }
