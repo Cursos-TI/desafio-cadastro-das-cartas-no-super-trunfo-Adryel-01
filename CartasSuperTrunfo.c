@@ -174,7 +174,6 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
 
         default:
             printf("\nOpção Inválida!\n");
-        break;
         }
 
 // Aqui voltamos para o Menu01 com a opção "Jogar".
@@ -294,7 +293,6 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
 
         default:
             printf("\nOpção Inválida\n");
-        break;
         }
 
     }
