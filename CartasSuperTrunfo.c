@@ -25,7 +25,7 @@ int main() {
         printf("\nAdicione os atributos a sua carta!\n");
         
 //Aqui inicia os campos para o usuário digitar os atributos que se pede da carta.
-
+/*
         printf("\nDefina a sigla que representa o seu estado: ");
         scanf(" %s", &sigla01);
         printf("Código da Carta - Escolha a letra do seu estado seguida de um número de 01 a 04: ");
@@ -35,16 +35,17 @@ int main() {
 
 //Nesse campo da população, poderia colocar um float ao invés de um int, pois o usuário pode escrever um número com decimal.
 //Não alterei, pois segui a descrição do Desafio.
-    
+*/    
         printf("Qual o número de habitantes de sua Cidade?: ");
         scanf(" %u", &populacao);
+    /*
         printf("Defina a área da sua cidade em Km² (Digite apenas o número): ");
         scanf(" %f", &area);
         printf("Quantos pontos turísticos há em sua cidade?: ");
         scanf(" %d", &pontosturisticos);
         printf("Qual o PIB da sua cidade: ");
         scanf("  %f", &pib);
-    
+    */
 // Coloquei a operação de divisão para a densidade populacional e PIB per capita.
 
     dens_populacional = (float) (populacao / area);
@@ -82,7 +83,7 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
         printf("\nAdicione os atributos a sua carta!\n");
 
 //Aqui inicia os campos para o usuário digitar os atributos que se pede da carta.
-
+/*
       printf("\nDefina a sigla que representa o seu estado: ");
         scanf(" %s", &sigla02);
         printf("Código da Carta - Escolha a letra do seu estado seguida de um número de 01 a 04: ");
@@ -92,16 +93,17 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
 
 //Nesse campo da população, poderia colocar um float ao invés de um int, como comentei na linha 37.
 //Não alterei, pois segui a descrição do Desafio.
-    
+*/
         printf("Qual o número de habitantes de sua Cidade?: ");
         scanf(" %u", &populacao02);
+        /*
         printf("Defina a área da sua cidade em Km² (Digite apenas o número): ");
         scanf(" %f", &area02);
         printf("Quantos pontos turísticos há em sua cidade?: ");
         scanf(" %d", &pontosturisticos02);
         printf("Qual o PIB da sua cidade: ");
         scanf("  %f", &pib02);
-    
+        */
 // Coloquei a operação de divisão para a densidade populacional e PIB per capita.
 
     dens_populacional2 = (float) (populacao02 / area02);
@@ -115,32 +117,34 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
     superPoder2 = (float) (populacao02 + area02 + pib02 + pontosturisticos02 + pib_per_capita2 + densPopulacionalInv2); 
 
        printf("\nVocê acabou de criar sua segunda carta!\n");
+       printf("\n<<< Início do Jogo >>>\n");
 
 // Criei um menu interativo para que o jogador decida se quer visualizar os dados das cartas cadastradas, ou se já prefere jogar
 
-    int opcao, opcao2, opcao3;
+    int inicio, verCarta, primeiroAtributo;
 
-    printf("\nSuper Trunfo - Países\n");
+    printf("\nVocê pode ver as cartas ou jogar!\n");
     printf("\n1. Ver Cartas\n");
     printf("2. Jogar\n");
     printf("\nEscolha uma opção: ");
-    scanf("%d", &opcao);
+    scanf("%d", &inicio);
 
 // Aqui tem um menu switch relacionado a opção "Ver cartas" ou "Jogar. (Denominei o nome dele "Menu01")"
 
-    switch (opcao)
+    switch (inicio)
     {
     case 1:
 
 // Nesse case 1, eu adicionei um outro menu para o jogador conseguir escolher qual carta visualizar, se a 01 ou a 02.(Menu02)
 
+        printf("\nVer Cartas\n");
         printf("\nQual carta você desejar ver?\n");
         printf("\n1. Carta 01\n");
         printf("2. Carta 02\n");
         printf("\nEscolha uma opção: ");
-        scanf(" %d", &opcao2);
+        scanf(" %d", &verCarta);
 
-        switch (opcao2)
+        switch (verCarta)
         {
         case 1:
 
@@ -180,21 +184,54 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
 
     case 2:
 
-        printf("\nQual atributo você quer comparar?\n");
+        printf("\nSelecione dois atributos diferentes para Jogar!\n");
         printf("\n1. População\n");
         printf("2. Área\n");
         printf("3. PIB\n");
         printf("4. Pontos turísticos\n");
         printf("5. Densidade demográfica\n");
-        printf("\nEscolha uma opção: ");
-        scanf("%d", &opcao3);
+        printf("\nSelecione o 1º Atributo: ");
+        scanf(" %d", &primeiroAtributo);
 
 // Aqui está o menu 03 utilizado para realizar as comparações e a finalidade do jogo.
 
-        switch (opcao3)
+        int segundoAtributo1, resultado;
+
+        switch (primeiroAtributo)
         {
         case 1: //Atributo População
             
+            printf("\nVocê escolheu o atributo - População!\n");
+            printf("\nSelecione o 2º Atributo");
+            printf("\n1. Área\n");
+            printf("2. PIB\n");
+            printf("3. Pontos turísticos\n");
+            printf("4. Densidade demográfica\n");
+            printf("\nSelecione o 2º Atributo: ");
+            scanf(" %d", &segundoAtributo1);
+
+            switch (segundoAtributo1)
+            {
+            case 1: // Opção de escolha para atributo 1: População e Atributo 2: Área
+                
+                    printf("\n%s vs %s \n", estado, estado02);
+                    printf("\nAtributos: População e Área\n");
+                    printf("População de %s = %u Habitantes  |  Área de %s = %.2f Km² \n", estado, populacao, estado, area);
+                    printf("População de %s = %u Habitantes  |  Área de %s = %.2f Km² \n", estado02, populacao02, estado02, area02);
+
+                    //parei aqui: criar uma variável para somar os valores
+
+                    printf("\nPoder de %s: \n");
+
+        
+
+            break;
+            
+            default:
+                break;
+            }
+
+
             printf("\n%s vs %s - População\n", estado, estado02);
             printf("\nCarta 01: %s - %u Habitantes\n", estado, populacao);
             printf("Carta 02: %s - %u Habitantes\n", estado02, populacao02);
