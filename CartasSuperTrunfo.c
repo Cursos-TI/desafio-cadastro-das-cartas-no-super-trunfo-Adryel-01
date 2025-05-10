@@ -38,9 +38,10 @@ int main() {
 */    
         printf("Qual o número de habitantes de sua Cidade?: ");
         scanf(" %u", &populacao);
-    /*
+    
         printf("Defina a área da sua cidade em Km² (Digite apenas o número): ");
         scanf(" %f", &area);
+        /*
         printf("Quantos pontos turísticos há em sua cidade?: ");
         scanf(" %d", &pontosturisticos);
         printf("Qual o PIB da sua cidade: ");
@@ -96,9 +97,10 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
 */
         printf("Qual o número de habitantes de sua Cidade?: ");
         scanf(" %u", &populacao02);
-        /*
+        
         printf("Defina a área da sua cidade em Km² (Digite apenas o número): ");
         scanf(" %f", &area02);
+        /*
         printf("Quantos pontos turísticos há em sua cidade?: ");
         scanf(" %d", &pontosturisticos02);
         printf("Qual o PIB da sua cidade: ");
@@ -219,30 +221,29 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
                     printf("População de %s = %u Habitantes  |  Área de %s = %.2f Km² \n", estado, populacao, estado, area);
                     printf("População de %s = %u Habitantes  |  Área de %s = %.2f Km² \n", estado02, populacao02, estado02, area02);
 
-                    //parei aqui: criar uma variável para somar os valores
+                    float soma, soma01;
+                    int resultado;
 
-                    printf("\nPoder de %s: \n");
+                    soma = (float) populacao + area;
+                    soma01 = (float) populacao02 + area02;
 
+                    printf("\nPoder de %s: %.2f  |  Poder de %s: %.2f\n", estado, soma, estado02, soma01);
+
+                    
         
-
             break;
             
             default:
                 break;
             }
 
-
-            printf("\n%s vs %s - População\n", estado, estado02);
-            printf("\nCarta 01: %s - %u Habitantes\n", estado, populacao);
-            printf("Carta 02: %s - %u Habitantes\n", estado02, populacao02);
-
 //Comparação das cartas por atributos utilizando a função if.
 
-            if (populacao == populacao02)
+            if (resultado = 1)
             {
-                printf("\n### O jogo deu empate ###!\n");
+                printf("\n>>> %s Venceu a partida <<<\n", estado);
 
-            } else if (populacao > populacao02) 
+            } else if () 
             {
                 printf("\nParabéns, %s Ganhou!\n", estado);
 
