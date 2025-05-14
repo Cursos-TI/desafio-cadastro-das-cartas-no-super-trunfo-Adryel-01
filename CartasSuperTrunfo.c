@@ -216,7 +216,13 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
             printf("\nVocê escolheu o atributo: População\n");
             printf("População de %s = %u Habitantes  |  População de %s = %d Habitantes \n", estado, populacao, estado02, populacao02);
         
-            resultado1 = populacao > populacao02 ? 1 : 0;
+            if (populacao == populacao02)
+            {
+                resultado1 == 0; //0 se 
+            }else{
+                resultado1 = populacao > populacao02 ? 1 : 2;
+            }
+
         break;
         case 2: //Atributo Área
                 
@@ -307,7 +313,9 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
                     {
                         printf("\n>>> Parabéns %s, você venceu!\n", estado);
              
-                    } else if (resultado1 != resultado2) {
+                    } else if (resultado1  resultado2) || 
+                              (populacao == populacao02) 
+                    {
 
                         printf("\n>>> O jogo empatou! <<<\n");
                     } else {
