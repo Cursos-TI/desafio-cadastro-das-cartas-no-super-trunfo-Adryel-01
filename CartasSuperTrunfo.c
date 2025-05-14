@@ -199,13 +199,22 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
         printf("\nSelecione o 1º Atributo: ");
         scanf(" %d", &primeiroAtributo);
 
+        printf("\nAgora selecione o 2º atributo!\n");
+        printf("\n1. População\n");
+        printf("2. Área\n");
+        printf("3. PIB\n");
+        printf("4. Pontos turísticos\n");
+        printf("5. Densidade demográfica\n");
+        printf("\nSelecione o 2º Atributo: ");
+        scanf(" %d", &segundoAtributo);
+
         switch (primeiroAtributo)
         {
         case 1: //Atributo População
                 
             printf("\n%s vs %s\n", estado, estado02);
             printf("\nVocê escolheu o atributo: População\n");
-            printf("População de %s = %u Habitantes  |  População de %s = %.2f Km² \n", estado, populacao, estado02, populacao02);
+            printf("População de %s = %u Habitantes  |  População de %s = %d Habitantes \n", estado, populacao, estado02, populacao02);
         
             resultado1 = populacao > populacao02 ? 1 : 0;
         break;
@@ -245,15 +254,6 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
                 printf("\nOpção Inválida!\n");
         break;
         }
-
-        printf("\nSelecione o 2º atributo!\n");
-        printf("\n1. População\n");
-        printf("2. Área\n");
-        printf("3. PIB\n");
-        printf("4. Pontos turísticos\n");
-        printf("5. Densidade demográfica\n");
-        printf("\nSelecione o 1º Atributo: ");
-        scanf(" %d", &segundoAtributo);
 
         if (primeiroAtributo == segundoAtributo)
             {
@@ -302,8 +302,7 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
                         printf("\nOpção Inválida!\n");
                 break;
                 }
-            }
-
+            
                     if (resultado1 && resultado2)
                     {
                         printf("\n>>> Parabéns %s, você venceu!\n", estado);
@@ -314,7 +313,7 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
                     } else {
                         printf("\n>>> Parabéns %s, você venceu!\n", estado02);
                     }
- }
+ }}
                 
         return 0;
     }
