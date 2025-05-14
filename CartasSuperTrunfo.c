@@ -123,7 +123,8 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
 
 // Criei um menu interativo para que o jogador decida se quer visualizar os dados das cartas cadastradas, ou se já prefere jogar
 
-    int inicio, verCarta, primeiroAtributo;
+    int inicio, verCarta, primeiroAtributo, segundoAtributo, resultado1, resultado2;
+    float soma, soma02;
 
     printf("\nVocê pode ver as cartas ou jogar!\n");
     printf("\n1. Ver Cartas\n");
@@ -182,6 +183,8 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
             printf("\nOpção Inválida!\n");
         break;
         }
+    break;
+    
 
 // Aqui voltamos para o Menu01 com a opção "Jogar".
 
@@ -196,136 +199,122 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
         printf("\nSelecione o 1º Atributo: ");
         scanf(" %d", &primeiroAtributo);
 
-        int segundoAtributo1, resultado;
-
         switch (primeiroAtributo)
         {
         case 1: //Atributo População
-            
-            printf("\nVocê escolheu o atributo - População!\n");
-            printf("\nSelecione o 2º Atributo");
-            printf("\n1. Área\n");
-            printf("2. PIB\n");
-            printf("3. Pontos turísticos\n");
-            printf("4. Densidade demográfica\n");
-            printf("\nSelecione o 2º Atributo: ");
-            scanf(" %d", &segundoAtributo1);
-
-            switch (segundoAtributo1)
-            {
-            case 1: // Opção de escolha para atributo 1: População e Atributo 2: Área
                 
-                    printf("\n%s vs %s\n", estado, estado02);
-                    printf("\nAtributos: População e Área\n");
-                    printf("População de %s = %u Habitantes  |  Área de %s = %.2f Km² \n", estado, populacao, estado, area);
-                    printf("População de %s = %u Habitantes  |  Área de %s = %.2f Km² \n", estado02, populacao02, estado02, area02);
-
-                    float somaPeA, somaPeA02; //PeA significa População e Área, e o PeA02: População e Área da carta 2.
-                    int resultadoPeA; //resultado da comparação da População e Área.
-
-                    somaPeA = (float) populacao + area;
-                    somaPeA02 = (float) populacao02 + area02;
-
-                    printf("\nPoder de %s: %.2f  |  Poder de %s: %.2f\n", estado, somaPeA, estado02, somaPeA02);
-
-                    if (somaPeA == somaPeA02){
-                        
-                        printf("\n>>> O jogo empatou! <<<");
-
-                    } else {
-
-                        resultadoPeA = (somaPeA > somaPeA02) ? 1:0;
-                    }    
-            break;/*
-            case 2: // Opção de escolha para atributo 1: População e Atributo 2: PIB
-
-                    printf("\n%s vs %s\n", estado, estado02);
-                    printf("\nAtributos: População e PIB\n");
-                    printf("População de %s = %u Habitantes  |  PIB de %s = %.2f Km² \n", estado, populacao, estado, pib);
-                    printf("População de %s = %u Habitantes  |  PIB de %s = %.2f Km² \n", estado02, populacao02, estado02, pib02);
-
-                    float somaPeP, somaPeP02; //PeP significa População e PIB, e o PeP02: População e PIB da carta 2.
-                    int resultadoPeP; //resultado da comparação da População e PIB.
-
-                    somaPeP = (float) populacao + pib;
-                    somaPeP02 = (float) populacao02 + pib02;
-
-                    printf("\nPoder de %s: %.2f  |  Poder de %s: %.2f\n", estado, somaPeP, estado02, somaPeP02);
-
-                    if (somaPeP == somaPeP02){
-                        
-                        printf("\n>>> O jogo empatou! <<<");
-
-                    } else {
-
-                        resultadoPeP = (somaPeP > somaPeP02) ? 1:0;
-                    }    
-            break;
-            case 3: // Opção de escolha para atributo 1: População e Atributo 3: Pontos Turísticos
-
-                    printf("\n%s vs %s\n", estado, estado02);
-                    printf("\nAtributos: População e Pontos Turísticos\n");
-                    printf("População de %s = %u Habitantes  |  Pontos Turísticos de %s = %d\n", estado, populacao, estado, pontosturisticos);
-                    printf("População de %s = %u Habitantes  |  Pontos Turísticos de %s = %d\n", estado02, populacao02, estado02, pontosturisticos02);
-
-                    float somaPePt, somaPePt02; //PePt significa População e P. Turísticos, e o PePt02: População e P. Turísticos da carta 2.
-                    int resultadoPePt; //resultado da comparação da População e P.Turísticos.
-
-                    somaPePt = (float) populacao + pontosturisticos;
-                    somaPePt02 = (float) populacao02 + pontosturisticos02;
-
-                    printf("\nPoder de %s: %.2f  |  Poder de %s: %.2f\n", estado, somaPePt, estado02, somaPePt02);
-
-                    if (somaPePt == somaPePt02){
-                        
-                        printf("\n>>> O jogo empatou! <<<");
-
-                    } else {
-
-                        resultadoPePt = (somaPePt > somaPePt02) ? 1:0;
-                    }    
-            break;
-            case 4: // Opção de escolha para atributo 1: População e Atributo 4: Densidade demográfica
-            
-                    printf("\n%s vs %s\n", estado, estado02);
-                    printf("\nAtributos: População e Densidade Demográfica\n");
-                    printf("População de %s = %u Habitantes  |  Densidade Populacional de %s = %.2f hab/Km²\n", estado, populacao, estado, dens_populacional);
-                    printf("População de %s = %u Habitantes  |  Densidade Populacional de %s = %.2f hab/Km²\n", estado02, populacao02, estado02, dens_populacional2);
-
-                    float somaPeD, somaPeD02; //PeD significa População e Densidade P., e o PeD02: População e densidade P. da carta 2.
-                    int resultadoPeD; //resultado da comparação da População e Densidade P..
-
-                    somaPeD = (float) populacao + dens_populacional;
-                    somaPeD02 = (float) populacao02 + dens_populacional2;
-
-                    printf("\nPoder de %s: %.2f  |  Poder de %s: %.2f\n", estado, somaPeD, estado02, somaPeD02);
-
-                    if (somaPeD == somaPeD02){
-                        
-                        printf("\n>>> O jogo empatou! <<<");
-
-                    } else {
-
-                        resultadoPeD = (somaPeD > somaPeD02) ? 1:0;
-                    }    
-            break;*/
-            default:
+            printf("\n%s vs %s\n", estado, estado02);
+            printf("\nVocê escolheu o atributo: População\n");
+            printf("População de %s = %u Habitantes  |  População de %s = %.2f Km² \n", estado, populacao, estado02, populacao02);
         
+            resultado1 = populacao > populacao02 ? 1 : 0;
+        break;
+        case 2: //Atributo Área
+                
+            printf("\n%s vs %s\n", estado, estado02);
+            printf("\nVocê escolheu o atributo: Área\n");
+            printf("Área de %s = %.2f Km²  |  Área de %s = %.2f Km² \n", estado, area, estado02, area02);
+             
+            resultado1 = (area > area02) ? 1 : 0;
+        break;
+        case 3: //Atributo PIB
+                
+            printf("\n%s vs %s\n", estado, estado02);
+            printf("\nVocê escolheu o atributo: PIB\n");
+            printf("PIB de %s = R$ %.2f Bilhões  |  PIB de %s = R$ %.2f Bilhões \n", estado, pib, estado02, pib02);
+             
+            resultado1 = (pib > pib02) ? 1 : 0;
+        break;
+        case 4: //Atributo Pontos Turísticos
+                
+            printf("\n%s vs %s\n", estado, estado02);
+            printf("\nVocê escolheu o atributo: Pontos Turísticos\n");
+            printf("Pontos Turísticos de %s = %d |  PIB de %s = %d \n", estado, pontosturisticos, estado02, pontosturisticos02);
+
+            resultado1 = (pontosturisticos > pontosturisticos02) ? 1 : 0;
+        break;
+        case 5: //Atributo Densidade demográfica
+                
+            printf("\n%s vs %s\n", estado, estado02);
+            printf("\nVocê escolheu o atributo: Densidade Demográfica\n");
+            printf("Densidade Populacional de %s = %.2f hab/Km²  |  Densidade Populacional de %s = %.2f hab/Km²\n", estado, densPopulacionalInv, estado02, densPopulacionalInv2);
+             
+            resultado1 = (densPopulacionalInv > densPopulacionalInv2) ? 1 : 0;
+        break;
+        default:
                 printf("\nOpção Inválida!\n");
-            
-            break;
+        break;
+        }
 
-            //Lógica do jogo
+        printf("\nSelecione o 2º atributo!\n");
+        printf("\n1. População\n");
+        printf("2. Área\n");
+        printf("3. PIB\n");
+        printf("4. Pontos turísticos\n");
+        printf("5. Densidade demográfica\n");
+        printf("\nSelecione o 1º Atributo: ");
+        scanf(" %d", &segundoAtributo);
 
-            if (resultado = 1)
+        if (primeiroAtributo == segundoAtributo)
             {
-                printf("\n>>> Parabéns %s, Você venceu a partida! <<<\n", estado);
+                printf("\nEscolha um atributo diferente!\n", estado);
 
             } else {
-            {
-                printf("\n>>> Parabéns %s, Você venceu a partida! <<<\n", estado02);
+
+                switch (segundoAtributo)
+                {
+                case 1: //Atributo População
+                
+                printf("\nVocê escolheu o atributo: População\n");
+                printf("População de %s = %u Habitantes  |  População de %s = %u Habitantes\n", estado, populacao, estado02, populacao02);
+            
+                resultado2 = populacao > populacao02 ? 1 : 0;
+            break;
+            case 2: //Atributo Área
+                    
+                printf("\nVocê escolheu o atributo: Área\n");
+                printf("Área de %s = %.2f Km²  |  Área de %s = %.2f Km² \n", estado, area, estado02, area02);
+                
+                resultado2 = (area > area02) ? 1 : 0;
+            break;
+            case 3: //Atributo PIB
+                    
+                printf("\nVocê escolheu o atributo: PIB\n");
+                printf("PIB de %s = R$ %.2f Bilhões  |  PIB de %s = R$ %.2f Bilhões \n", estado, pib, estado02, pib02);
+                
+                resultado2 = (pib > pib02) ? 1 : 0;
+            break;
+            case 4: //Atributo Pontos Turísticos
+                    
+                printf("\nVocê escolheu o atributo: Pontos Turísticos\n");
+                printf("Pontos Turísticos de %s = %d |  PIB de %s = %d \n", estado, pontosturisticos, estado02, pontosturisticos02);
+
+                resultado2 = (pontosturisticos > pontosturisticos02) ? 1 : 0;
+            break;
+            case 5: //Atributo Densidade demográfica
+                    
+                printf("\nVocê escolheu o atributo: Densidade Demográfica\n");
+                printf("Densidade Populacional de %s = %.2f hab/Km²  |  Densidade Populacional de %s = %.2f hab/Km²\n", estado, densPopulacionalInv, estado02, densPopulacionalInv2);
+                
+                resultado2 = (densPopulacionalInv > densPopulacionalInv2) ? 1 : 0;
+                break;
+                default:
+                        printf("\nOpção Inválida!\n");
+                break;
+                }
             }
-}}
-}
-    return 0;
-}
+
+                    if (resultado1 && resultado2)
+                    {
+                        printf("\n>>> Parabéns %s, você venceu!\n", estado);
+             
+                    } else if (resultado1 != resultado2) {
+
+                        printf("\n>>> O jogo empatou! <<<\n");
+                    } else {
+                        printf("\n>>> Parabéns %s, você venceu!\n", estado02);
+                    }
+ }
+                
+        return 0;
+    }
