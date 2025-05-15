@@ -242,7 +242,11 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
             printf("\nVocê escolheu o atributo: PIB\n");
             printf("PIB de %s = R$ %.2f Bilhões  |  PIB de %s = R$ %.2f Bilhões \n", estado, pib, estado02, pib02);
              
-            resultado1 = (pib > pib02) ? 1 : 0;
+            if (pib == pib02)
+            {
+                resultado1 == 0; //0 se os resultados das variáveis forem iguais.
+            }else{
+                resultado1 = pib > pib02 ? 1 : 2;
         break;
         case 4: //Atributo Pontos Turísticos
                 
@@ -250,7 +254,11 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
             printf("\nVocê escolheu o atributo: Pontos Turísticos\n");
             printf("Pontos Turísticos de %s = %d |  PIB de %s = %d \n", estado, pontosturisticos, estado02, pontosturisticos02);
 
-            resultado1 = (pontosturisticos > pontosturisticos02) ? 1 : 0;
+            if (pontosturisticos == pontosturisticos02)
+            {
+                resultado1 == 0; //0 se os resultados das variáveis forem iguais.
+            }else{
+                resultado1 = pontosturisticos > pontosturisticos02 ? 1 : 2;
         break;
         case 5: //Atributo Densidade demográfica
                 
@@ -258,7 +266,11 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
             printf("\nVocê escolheu o atributo: Densidade Demográfica\n");
             printf("Densidade Populacional de %s = %.2f hab/Km²  |  Densidade Populacional de %s = %.2f hab/Km²\n", estado, densPopulacionalInv, estado02, densPopulacionalInv2);
              
-            resultado1 = (densPopulacionalInv > densPopulacionalInv2) ? 1 : 0;
+            if (densPopulacionalInv == densPopulacionalInv2)
+            {
+                resultado1 == 0; //0 se os resultados das variáveis forem iguais.
+            }else{
+                resultado1 = densPopulacionalInv > densPopulacionalInv2 ? 1 : 2;
         break;
         default:
                 printf("\nOpção Inválida!\n");
@@ -304,21 +316,36 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
                 printf("\nVocê escolheu o atributo: PIB\n");
                 printf("PIB de %s = R$ %.2f Bilhões  |  PIB de %s = R$ %.2f Bilhões \n", estado, pib, estado02, pib02);
                 
-                resultado2 = (pib > pib02) ? 1 : 0;
+                if (pib == pib02)
+                {
+                    resultado2 == 0; //0 se os resultados das variáveis forem iguais
+                }else {
+                    resultado2 = pib > pib02 ? 1 : 2;
+                }
             break;
             case 4: //Atributo Pontos Turísticos
                     
                 printf("\nVocê escolheu o atributo: Pontos Turísticos\n");
                 printf("Pontos Turísticos de %s = %d |  PIB de %s = %d \n", estado, pontosturisticos, estado02, pontosturisticos02);
 
-                resultado2 = (pontosturisticos > pontosturisticos02) ? 1 : 0;
+                if (pontosturisticos == pontosturisticos02)
+                {
+                    resultado2 == 0; //0 se os resultados das variáveis forem iguais
+                }else {
+                    resultado2 = pontosturisticos > pontosturisticos02 ? 1 : 2;
+                }
             break;
             case 5: //Atributo Densidade demográfica
                     
                 printf("\nVocê escolheu o atributo: Densidade Demográfica\n");
                 printf("Densidade Populacional de %s = %.2f hab/Km²  |  Densidade Populacional de %s = %.2f hab/Km²\n", estado, densPopulacionalInv, estado02, densPopulacionalInv2);
                 
-                resultado2 = (densPopulacionalInv > densPopulacionalInv2) ? 1 : 0;
+                if (densPopulacionalInv == densPopulacionalInv2)
+                {
+                    resultado2 == 0; //0 se os resultados das variáveis forem iguais
+                }else {
+                    resultado2 = densPopulacionalInv > densPopulacionalInv2 ? 1 : 2;
+                }
                 break;
                 default:
                         printf("\nOpção Inválida!\n");
