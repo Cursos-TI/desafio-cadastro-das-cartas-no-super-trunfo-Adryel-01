@@ -25,7 +25,7 @@ int main() {
         printf("\nAdicione os atributos a sua carta!\n");
         
 //Aqui inicia os campos para o usuário digitar os atributos que se pede da carta.
-/*
+
         printf("\nDefina a sigla que representa o seu estado: ");
         scanf(" %s", &sigla01);
         printf("Código da Carta - Escolha a letra do seu estado seguida de um número de 01 a 04: ");
@@ -35,18 +35,16 @@ int main() {
 
 //Nesse campo da população, poderia colocar um float ao invés de um int, pois o usuário pode escrever um número com decimal.
 //Não alterei, pois segui a descrição do Desafio.
-*/    
+
         printf("Qual o número de habitantes de sua Cidade?: ");
         scanf(" %u", &populacao);
-    
         printf("Defina a área da sua cidade em Km² (Digite apenas o número): ");
         scanf(" %f", &area);
-        /*
         printf("Quantos pontos turísticos há em sua cidade?: ");
         scanf(" %d", &pontosturisticos);
         printf("Qual o PIB da sua cidade: ");
         scanf("  %f", &pib);
-    */
+    
 // Coloquei a operação de divisão para a densidade populacional e PIB per capita.
 
     dens_populacional = (float) (populacao / area);
@@ -62,10 +60,7 @@ int main() {
     printf("\nParabéns, você acabou de criar sua primeira carta! \n");
 
 /* Adicionei as variáveis que utilizaremos na carta 2, onde "letra02" é a que representará o Estado da segunda carta, 
-    "codigo02" é o código da carta (Ex.: A01,B03,C04), "cidade02" o nome da cidade, "estado02" o nome do estado e assim por diante.
-
-Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
-*/
+    "codigo02" é o código da carta (Ex.: A01,B03,C04), "cidade02" o nome da cidade, "estado02" o nome do estado e assim por diante.*/
 
         char codigo02 [10], cidade02 [20], estado02 [20], sigla02 [10];
         int pontosturisticos02;
@@ -80,12 +75,11 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
 
         printf("\nEstado 02: ");
         scanf(" %s", estado02);
-
         printf("\nAdicione os atributos a sua carta!\n");
 
 //Aqui inicia os campos para o usuário digitar os atributos que se pede da carta.
-/*
-      printf("\nDefina a sigla que representa o seu estado: ");
+
+        printf("\nDefina a sigla que representa o seu estado: ");
         scanf(" %s", &sigla02);
         printf("Código da Carta - Escolha a letra do seu estado seguida de um número de 01 a 04: ");
         scanf(" %s", &codigo02);
@@ -94,18 +88,17 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
 
 //Nesse campo da população, poderia colocar um float ao invés de um int, como comentei na linha 37.
 //Não alterei, pois segui a descrição do Desafio.
-*/
+
         printf("Qual o número de habitantes de sua Cidade?: ");
         scanf(" %u", &populacao02);
         
         printf("Defina a área da sua cidade em Km² (Digite apenas o número): ");
         scanf(" %f", &area02);
-        /*
         printf("Quantos pontos turísticos há em sua cidade?: ");
         scanf(" %d", &pontosturisticos02);
         printf("Qual o PIB da sua cidade: ");
         scanf("  %f", &pib02);
-        */
+        
 // Coloquei a operação de divisão para a densidade populacional e PIB per capita.
 
     dens_populacional2 = (float) (populacao02 / area02);
@@ -235,6 +228,7 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
                 resultado1 == 0; //0 se os resultados das variáveis forem iguais.
             }else{
                 resultado1 = area > area02 ? 1 : 2;
+            }
         break;
         case 3: //Atributo PIB
                 
@@ -275,7 +269,7 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
         default:
                 printf("\nOpção Inválida!\n");
         break;
-        }}}
+        }}}}
 
         if (primeiroAtributo == segundoAtributo)
             {
