@@ -218,7 +218,7 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
         
             if (populacao == populacao02)
             {
-                resultado1 == 0; //0 se 
+                resultado1 == 0; //0 se os resultados das variáveis forem iguais
             }else{
                 resultado1 = populacao > populacao02 ? 1 : 2;
             }
@@ -230,7 +230,11 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
             printf("\nVocê escolheu o atributo: Área\n");
             printf("Área de %s = %.2f Km²  |  Área de %s = %.2f Km² \n", estado, area, estado02, area02);
              
-            resultado1 = (area > area02) ? 1 : 0;
+            if (area == area02)
+            {
+                resultado1 == 0; //0 se os resultados das variáveis forem iguais.
+            }else{
+                resultado1 = area > area02 ? 1 : 2;
         break;
         case 3: //Atributo PIB
                 
@@ -259,11 +263,11 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
         default:
                 printf("\nOpção Inválida!\n");
         break;
-        }
+        }}}
 
         if (primeiroAtributo == segundoAtributo)
             {
-                printf("\nEscolha um atributo diferente!\n", estado);
+                printf("\nEscolha um atributo diferente!\n");
 
             } else {
 
@@ -274,14 +278,26 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
                 printf("\nVocê escolheu o atributo: População\n");
                 printf("População de %s = %u Habitantes  |  População de %s = %u Habitantes\n", estado, populacao, estado02, populacao02);
             
-                resultado2 = populacao > populacao02 ? 1 : 0;
+                if (populacao == populacao02)
+                {
+                    resultado2 == 0; //0 se os resultados das variáveis forem iguais
+                }else {
+                    resultado2 = populacao > populacao02 ? 1 : 2;
+                }
             break;
             case 2: //Atributo Área
                     
                 printf("\nVocê escolheu o atributo: Área\n");
                 printf("Área de %s = %.2f Km²  |  Área de %s = %.2f Km² \n", estado, area, estado02, area02);
                 
-                resultado2 = (area > area02) ? 1 : 0;
+
+                if (area == area02)
+                {
+                    resultado2 == 0; //0 se os resultados das variáveis forem iguais.
+                }else{
+                    resultado2 = area > area02 ? 1 : 2;
+
+
             break;
             case 3: //Atributo PIB
                     
@@ -307,21 +323,25 @@ Coloquei o 02 para não dá erro de compilação e puxar os valores da carta 01.
                 default:
                         printf("\nOpção Inválida!\n");
                 break;
-                }
+                }}}
             
-                    if (resultado1 && resultado2)
-                    {
-                        printf("\n>>> Parabéns %s, você venceu!\n", estado);
-             
-                    } else if (resultado1  resultado2) || 
-                              (populacao == populacao02) 
+                    if ((resultado1 == 1 & resultado2 == 1) || 
+                        (resultado1 == 1 & resultado2 == 0) ||
+                        (resultado1 == 0 & resultado2 == 1))
                     {
 
-                        printf("\n>>> O jogo empatou! <<<\n");
-                    } else {
+                        printf("\n>>> Parabéns %s, você venceu!\n", estado);
+             
+                    } else if ( (resultado1 == 2 & resultado2 == 2) || 
+                                (resultado1 == 2 & resultado2 == 0) ||
+                                (resultado1 == 0 & resultado2 == 2))
+                    {
                         printf("\n>>> Parabéns %s, você venceu!\n", estado02);
+                        
+                    } else {
+                        printf("\n>>> O jogo empatou! <<<\n");
                     }
- }}
+ 
                 
         return 0;
     }
